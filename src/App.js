@@ -3,7 +3,7 @@ import Square from "./Square";
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [board, setBoard] = useState(Array(25).fill(""));
+  const [board, setBoard] = useState(Array(9).fill(""));
   const [player, setPlayer] = useState("O");
   const [winner, setWinner] = useState("");
   const totalRow = Math.sqrt(board.length);
