@@ -56,6 +56,7 @@ export default function App() {
     }
     return flag;
   }
+  
   function columnWin(player) {
     var flag = false;
     const totalColumn = Math.sqrt(board.length);
@@ -63,7 +64,6 @@ export default function App() {
 
     for (let column = 0; column < totalColumn; column++) {
       let columnBox = column;
-      // const columnLastBox = box - totalColumn + column;
       while (columnBox < box) {
         if (board[columnBox] !== player) {
           break;
@@ -74,8 +74,8 @@ export default function App() {
     }
     return flag;
   }
+
   function chooseSquare(i) {
-    // board[i] = board[i] === "" ? player : board[i];
     if (board[i] === "") {
       const newBoard = [...board];
       newBoard[i] = player;
@@ -116,49 +116,6 @@ export default function App() {
           </div>
         ))}
       </div>
-
-      {/* <div className="row">{buildBoard(0)}</div>
-        <div className="row">
-          <Square
-            val={board[3]}
-            chooseSquare={() => {
-              chooseSquare(3);
-            }}
-          />
-          <Square
-            val={board[4]}
-            chooseSquare={() => {
-              chooseSquare(4);
-            }}
-          />
-          <Square
-            val={board[5]}
-            chooseSquare={() => {
-              chooseSquare(5);
-            }}
-          />
-        </div>
-        <div className="row">
-          <Square
-            val={board[6]}
-            chooseSquare={() => {
-              chooseSquare(6);
-            }}
-          />
-          <Square
-            val={board[7]}
-            chooseSquare={() => {
-              chooseSquare(7);
-            }}
-          />
-          <Square
-            val={board[8]}
-            chooseSquare={() => {
-              chooseSquare(8);
-            }}
-          />
-        </div>
-      </div> */}
       <h1>{winner}</h1>
     </div>
   );
